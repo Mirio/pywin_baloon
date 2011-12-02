@@ -1,0 +1,11 @@
+Use:
+import pygtk_baloon
+pygtk_baloon.get_baloon.baloon(title,message)
+
+------------------------------
+
+Example:
+import pygtk_baloon
+pygtk_baloon.baloon("Try Title","Hello!!!")
+
+------------------------------
