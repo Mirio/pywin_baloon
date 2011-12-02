@@ -9,3 +9,5 @@ import pygtk_baloon
 pygtk_baloon.baloon("Try Title","Hello!!!")
 
 ------------------------------
+
+If you disable baloon, run the disable_baloon.reg file

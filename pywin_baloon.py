@@ -1,5 +1,5 @@
 #                                    LICENSE BSD 2 CLAUSE                                       #
-#   Copyright 2011 Mirio. All rights reserved.                                             #
+#   Copyright 2011 Mirio. All rights reserved.                                                  #
 #   Redistribution and use in source and binary forms, with or without modification, are        #
 #   permitted provided that the following conditions are met:                                   #
 #       1. Redistributions of source code must retain the above copyright notice, this list of  #
@@ -27,7 +27,8 @@ __version__ = "1.0"
 import sys
 import time
 import os
-from PyQt4.QtGui import QMainWindow, QSystemTrayIcon, QSystemTrayIcon, QIcon, QApplication
+from PyQt4.QtGui import QMainWindow, QSystemTrayIcon, QSystemTrayIcon 
+from PyQt4.QtGui import QApplication, QIcon
 class sysBaloon(QMainWindow):
     def baloon(self, t, m, tm=50000):
         self.trayicon = QSystemTrayIcon(self)
@@ -40,10 +41,11 @@ class sysBaloon(QMainWindow):
             self.trayicon.hide()
         else:
             print "This Function isn't supported."
-            if raw_input("Would you enable it? Y/N \n --> ") == "Y":
-                shell = os.popen('reg add "HKEY_CURRENT_USER\Software\Microsoft\Windows\CurrentVersion\Explorer\Advanced" /V "EnableBalloonTips" /D 1 /T REG_DWORD /F')
+            choose = raw_input("Would you enable it? Y/N \n --> ")
+            if choose == "Y":
+                shell = os.popen('enable_baloon.reg')
                 print "Run again this program"
-            elif raw_input("Would you enable it? >Y/N \n --> ") == "N":
+            elif choose == "N":
                 print "You don't use this program without baloon enabled."
             else:
                 print "You have insert wrong char."
